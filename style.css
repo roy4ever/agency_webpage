@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    /* for dividing in two parts left and right  */
+    display: flex;
+    flex: wrap;
+    position: relative;
+
+    /* removing the old background-color after use  */
+    /* background: cornflowerblue; */
+}
+
+nav{
+    width: 100%;
+    /* for absolute to be performed its parents need to be in static position  */
+    position: absolute;
+
+    /* making nav now the flex box  */
+    display: flex;
+    align-items: center;
+    padding: 30px 5% 0;
+    z-index: 100;
+}
+
+.logo{
+    width: 140px;
+    cursor: pointer;
+}
+
+.menu{
+    width: 30px;
+    cursor: pointer;
+}
+
+nav ul{
+    flex: 1;
+    text-align: right;
+    /* for making space between links and menu  */
+    margin-right: 96px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 42px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.left-col{
+    /* it will use the 62% of the wide screen  */
+    flex-basis: 62%;
+    /* I changed the padding after reviewing on my own  */
+    padding: 7% 5% 0;
+}
+
+.right-col{
+    /* it will take the remaining 38% of the srceen  */
+    flex-basis: 38%;
+    padding: 10% 3% 0;
+    background-color: rgba(71,0,204,0.6);
+   /* for making absolute position property in video  */
+   /* plus h3 postion also  */
+   /* play-icon also  */
+    position: relative;
+}
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: -100;
+}
+
+.left-col h1{
+    color: #444;
+    font-size: 45px;
+    padding-left: 60px;
+    position: relative;
+}
+
+.left-col h1::before{
+    content: '';
+    background: #0011db;
+    height: 80%;
+    width: 8px;
+    border-radius: 5px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.right-col h3{
+    color: white;
+    font-weight: 500;
+    padding-left: 50px;
+    position: absolute;
+    bottom: 120px;
+}
+
+.right-col h3::before{
+    content: '';
+    background: white;
+    height: 100%;
+    width: 6px;
+    border-radius: 5px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.play-icon{
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* so that the play button will be center as per said by tutor  */
+    transform: translate(-50%,-50%);
+}
+
+.team{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.user-col{
+    flex-basis: 27%;
+    text-align: center;
+    cursor: pointer;
+
+    /* included while appling hovering  */
+    transition: transform 1s;
+
+    /* for .user-col .arrow-icon  */
+    position: relative;
+}
+
+.user-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.info{
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.info p{
+    color: #555;
+    font-weight: 600;
+}
+
+.user-col:hover .info{
+        opacity: 1;
+}
+
+.user-col:hover{
+    transform: translateY(-30px);
+
+}
+
+.user-col .arrow-icon{
+    width: 50px;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* after applying down hover  */
+    transition: opacity 1s;
+}
+
+.user-col:hover .arrow-icon{
+    opacity: 0;
+}
+
+.white-menu{
+    color: white;
+}
